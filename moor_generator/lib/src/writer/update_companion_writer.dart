@@ -8,6 +8,9 @@ class UpdateCompanionWriter {
   UpdateCompanionWriter(this.table, this.session);
 
   void writeInto(StringBuffer buffer) {
+    if(table.fromClass != null) {
+      buffer.write('/// Companion generated for [${table.fromClass.type}]\n');
+    }
     buffer.write('class ${table.updateCompanionName} '
         'extends UpdateCompanion<${table.dartTypeName}> {\n');
     _writeFields(buffer);
