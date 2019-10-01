@@ -11,7 +11,7 @@ class DataClassWriter {
 
   void writeInto(StringBuffer buffer) {
     if(table.fromClass != null) {
-      buffer.write('/// Data class representing a row in [${table.fromClass.type}]\n');
+      buffer.write('/// Generated data class representing a row in [${table.fromClass.type}]\n');
     }
     buffer.write(
         'class ${table.dartTypeName} extends DataClass implements Insertable<${table.dartTypeName}> {\n');
